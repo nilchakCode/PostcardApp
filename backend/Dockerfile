@@ -4,20 +4,25 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
+# Set environment variables for better pip performance
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PYTHONUNBUFFERED=1
+
 # Install system dependencies needed for building Python packages
-RUN apt-get update && apt-get install -y \
+# Install only essential build tools first
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     g++ \
-    cargo \
-    rustc \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements file
 COPY requirements.txt .
 
 # Upgrade pip and install Python dependencies
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
-    pip install --no-cache-dir -r requirements.txt
+# Try to use pre-built wheels when available
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install -r requirements.txt
 
 # Copy application code
 COPY . .
