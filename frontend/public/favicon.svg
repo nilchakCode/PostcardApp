@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Postcard -->
+  <rect x="4" y="8" width="24" height="16" rx="2" fill="white" stroke="#3B82F6" stroke-width="1.5"/>
+
+  <!-- Stamp -->
+  <rect x="22" y="10" width="5" height="4" rx="0.5" fill="#3B82F6" opacity="0.5"/>
+
+  <!-- Address Lines -->
+  <line x1="6" y1="13" x2="18" y2="13" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+  <line x1="6" y1="16" x2="17" y2="16" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+  <line x1="6" y1="19" x2="16" y2="19" stroke="#94A3B8" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Heart symbol -->}
+  <path d="M 8 21 C 8 20.5 8.5 20 9 20 C 9.5 20 10 20.5 10 21 C 10 20.5 10.5 20 11 20 C 11.5 20 12 20.5 12 21 C 12 22 10 24 10 24 C 10 24 8 22 8 21 Z" fill="#EF4444"/>
+</svg>
