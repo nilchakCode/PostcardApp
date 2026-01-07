@@ -68,24 +68,24 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="bg-white border-2 border-black w-full max-w-lg">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
+      <div className="bg-white dark:bg-postcard-night-surface w-full max-w-lg shadow-modern-lg rounded-modern-2xl overflow-hidden">
         {/* Header Section */}
-        <div className="border-b-2 border-black p-4 sm:p-6 md:p-8">
+        <div className="border-b border-postcard-gray-200 dark:border-postcard-night-border p-6 sm:p-8 md:p-10 bg-gradient-to-br from-postcard-blue via-postcard-blue-light to-postcard-blue dark:from-postcard-blue-bright dark:via-postcard-blue-lighter dark:to-postcard-blue-bright">
           <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
             <div className="shrink-0">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 border-2 border-black bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 border-3 border-white/50 bg-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg rounded-modern-lg">
                 <Image src="/logo.svg" alt="PostcardsTo" width={80} height={80} className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" />
               </div>
             </div>
             <div className="flex-1 pt-1 sm:pt-2">
-              <div className="text-xs uppercase tracking-wider text-gray-500 mb-1 sm:mb-2 font-mono">
+              <div className="text-xs uppercase tracking-wider text-white/70 mb-1 sm:mb-2 font-mono">
                 Authentication Portal
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold lowercase text-black mb-1 sm:mb-2" style={{ letterSpacing: '0.05em' }}>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold lowercase text-white mb-1 sm:mb-2" style={{ letterSpacing: '0.05em' }}>
                 postcard
               </h1>
-              <p className="text-xs sm:text-sm text-gray-600 font-mono">
+              <p className="text-xs sm:text-sm text-white/90 font-mono">
                 Access your moments // Share your stories
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function LoginPage() {
                 type="text"
                 value={emailOrUsername}
                 onChange={(e) => setEmailOrUsername(e.target.value)}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-300 focus:border-black focus:outline-none transition-colors font-mono text-xs sm:text-sm"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-postcard-gray-300 dark:border-postcard-night-border dark:bg-postcard-night-bg dark:text-white focus:border-postcard-blue dark:focus:border-postcard-blue-bright focus:outline-none transition-colors font-mono text-xs sm:text-sm"
                 placeholder="user@postcardsto.com"
                 required
               />
@@ -126,7 +126,7 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 border-2 border-gray-300 focus:border-black focus:outline-none transition-colors font-mono text-xs sm:text-sm"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 border-2 border-postcard-gray-300 dark:border-postcard-night-border dark:bg-postcard-night-bg dark:text-white focus:border-postcard-blue dark:focus:border-postcard-blue-bright focus:outline-none transition-colors font-mono text-xs sm:text-sm"
                   placeholder="••••••••••••"
                   required
                 />
@@ -153,7 +153,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-black text-white py-2 sm:py-3 px-6 font-mono text-xs sm:text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-postcard-red to-postcard-red-light dark:from-postcard-red-bright dark:to-postcard-red-lighter text-white py-3 sm:py-3.5 px-6 font-mono text-xs sm:text-sm uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md rounded-modern-lg font-semibold"
             >
               {loading ? 'Authenticating...' : 'Login'}
             </button>
@@ -168,7 +168,7 @@ export default function LoginPage() {
           <div className="space-y-2 sm:space-y-3">
             <button
               onClick={handleGoogleLogin}
-              className="w-full flex items-center justify-center gap-2 sm:gap-3 border-2 border-gray-300 py-2 sm:py-3 px-4 sm:px-6 hover:border-black transition-colors group"
+              className="w-full flex items-center justify-center gap-2 sm:gap-3 border-2 border-postcard-gray-200 dark:border-postcard-night-border dark:bg-postcard-night-bg py-3 sm:py-3.5 px-4 sm:px-6 hover:border-postcard-blue dark:hover:border-postcard-blue-bright hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group rounded-modern-lg"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -181,7 +181,7 @@ export default function LoginPage() {
 
             <button
               onClick={handleAppleLogin}
-              className="w-full flex items-center justify-center gap-2 sm:gap-3 bg-black text-white border-2 border-black py-2 sm:py-3 px-4 sm:px-6 hover:bg-gray-900 transition-colors"
+              className="w-full flex items-center justify-center gap-2 sm:gap-3 bg-postcard-black dark:bg-white text-white dark:text-black py-3 sm:py-3.5 px-4 sm:px-6 hover:bg-postcard-black-soft dark:hover:bg-postcard-gray-200 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 shadow-md rounded-modern-lg"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>

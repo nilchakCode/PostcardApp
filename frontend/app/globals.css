@@ -3,14 +3,52 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light mode - Vintage Postcard Theme */
+  --background: #FFFAF0;
+  --foreground: #1A1A1A;
+  --surface: #FFF8F0;
+  --border: #1A1A1A;
+  --border-light: #D4D4D4;
+
+  /* Primary colors */
+  --primary-red: #C41E3A;
+  --primary-blue: #003087;
+  --accent-blue: #1E40AF;
+
+  /* Text colors */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-muted: #737373;
+
+  /* UI elements */
+  --input-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --hover-bg: #FFF8F0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode - Night Postcard Theme */
+    --background: #0F0F14;
+    --foreground: #E5E5E5;
+    --surface: #1A1A24;
+    --border: #404050;
+    --border-light: #2A2A3A;
+
+    /* Primary colors (brighter for dark mode) */
+    --primary-red: #EF4444;
+    --primary-blue: #3B82F6;
+    --accent-blue: #60A5FA;
+
+    /* Text colors */
+    --text-primary: #E5E5E5;
+    --text-secondary: #A0A0A8;
+    --text-muted: #6A6A78;
+
+    /* UI elements */
+    --input-bg: #1A1A24;
+    --card-bg: #1A1A24;
+    --hover-bg: #252530;
   }
 }
 
@@ -23,5 +61,83 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-dark {
+    background: rgba(26, 26, 36, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Smooth scale */
+  .hover-scale {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+}
+
+@layer components {
+  /* Modern postcard-style button */
+  .btn-postcard-primary {
+    @apply bg-postcard-red dark:bg-postcard-red-bright text-white font-bold py-3 px-6
+           rounded-modern
+           shadow-postcard dark:shadow-postcard-dark
+           hover:shadow-postcard-hover dark:hover:shadow-postcard-dark-hover
+           hover:-translate-y-0.5
+           transition-all duration-300 ease-in-out uppercase tracking-wider text-sm;
+  }
+
+  .btn-postcard-secondary {
+    @apply bg-postcard-blue dark:bg-postcard-blue-bright text-white font-bold py-3 px-6
+           rounded-modern
+           shadow-postcard dark:shadow-postcard-dark
+           hover:shadow-postcard-hover dark:hover:shadow-postcard-dark-hover
+           hover:-translate-y-0.5
+           transition-all duration-300 ease-in-out uppercase tracking-wider text-sm;
+  }
+
+  /* Modern postcard-style card */
+  .card-postcard {
+    @apply bg-white dark:bg-postcard-night-surface
+           rounded-modern-lg
+           shadow-postcard dark:shadow-postcard-dark
+           hover:shadow-postcard-hover dark:hover:shadow-postcard-dark-hover
+           hover:-translate-y-1
+           transition-all duration-300 ease-in-out;
+  }
+
+  /* Modern postcard-style input */
+  .input-postcard {
+    @apply bg-white dark:bg-postcard-night-surface
+           border-2 border-postcard-gray-200 dark:border-postcard-night-border
+           focus:border-postcard-blue dark:focus:border-postcard-blue-bright
+           focus:ring-4 focus:ring-postcard-blue/10 dark:focus:ring-postcard-blue-bright/10
+           text-postcard-black-text dark:text-postcard-night-text
+           px-4 py-3 rounded-modern
+           transition-all duration-200;
   }
 }

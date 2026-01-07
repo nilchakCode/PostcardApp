@@ -256,16 +256,16 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-white border-2 sm:border-4 border-black max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
+      <div className="bg-white dark:bg-postcard-night-surface rounded-modern-2xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-modern-lg">
         {/* Header */}
-        <div className="border-b-2 border-black p-4 sm:p-6 bg-gradient-to-r from-blue-50 to-indigo-100">
+        <div className="border-b border-postcard-gray-200 dark:border-postcard-night-border p-5 sm:p-7 bg-gradient-to-r from-postcard-blue to-postcard-blue-light dark:from-postcard-blue-bright dark:to-postcard-blue-lighter rounded-t-modern-2xl">
           <div className="flex items-center justify-between gap-2">
-            <h2 className="text-base sm:text-xl md:text-2xl font-sans font-bold uppercase text-amber-600" style={{ letterSpacing: '0.05em' }}>
+            <h2 className="text-base sm:text-xl md:text-2xl font-sans font-bold lowercase text-white" style={{ letterSpacing: '0.05em' }}>
               {postType === 'photo' ? '📸 new photo post' : '📖 new story'}
             </h2>
             <button
               onClick={onClose}
-              className="bg-white border-2 border-black hover:bg-red-500 hover:text-white hover:border-red-700 transition w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0"
+              className="bg-white/90 dark:bg-postcard-night-bg/90 hover:bg-postcard-red hover:text-white dark:hover:bg-postcard-red-bright transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0 rounded-full shadow-md hover:shadow-lg hover:scale-110"
               disabled={uploading}
               title="Close"
             >
@@ -297,7 +297,7 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
               />
 
               {imagePreview ? (
-                <div className="border-2 border-black relative">
+                <div className="border-2 border-postcard-black-text dark:border-postcard-night-border relative shadow-postcard dark:shadow-postcard-dark">
                   <Image
                     src={imagePreview}
                     alt="Preview"
@@ -311,7 +311,7 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
                       setImageFile(null)
                       setImagePreview(null)
                     }}
-                    className="absolute top-2 right-2 bg-black text-white px-2 sm:px-3 py-1 text-xs font-mono uppercase hover:bg-gray-800"
+                    className="absolute top-2 right-2 bg-postcard-red dark:bg-postcard-red-bright text-white px-2 sm:px-3 py-1 text-xs font-mono uppercase hover:bg-postcard-red-dark dark:hover:bg-postcard-red shadow-md"
                   >
                     Remove
                   </button>
@@ -320,10 +320,10 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-full border-2 border-dashed border-gray-300 hover:border-black transition p-8 sm:p-12 text-center"
+                  className="w-full border-2 border-dashed border-postcard-gray-300 dark:border-postcard-night-border hover:border-postcard-blue dark:hover:border-postcard-blue-bright transition p-8 sm:p-12 text-center"
                 >
                   <div className="text-3xl sm:text-4xl mb-2">📷</div>
-                  <div className="font-mono text-xs sm:text-sm uppercase tracking-wider">
+                  <div className="font-mono text-xs sm:text-sm uppercase tracking-wider text-postcard-black-soft dark:text-postcard-night-muted">
                     Click to select image
                   </div>
                 </button>
@@ -350,7 +350,7 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
                 <div className="space-y-3">
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {imagePreviews.map((preview, idx) => (
-                      <div key={idx} className="border-2 border-black relative aspect-square">
+                      <div key={idx} className="border-2 border-postcard-black-text dark:border-postcard-night-border relative aspect-square shadow-postcard dark:shadow-postcard-dark">
                         <Image
                           src={preview}
                           alt={`Preview ${idx + 1}`}
@@ -365,7 +365,7 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
                             setImageFiles(newFiles)
                             setImagePreviews(newPreviews)
                           }}
-                          className="absolute top-1 right-1 bg-red-600 text-white w-6 h-6 flex items-center justify-center text-xs hover:bg-red-700"
+                          className="absolute top-1 right-1 bg-postcard-red dark:bg-postcard-red-bright text-white w-6 h-6 flex items-center justify-center text-xs hover:bg-postcard-red-dark dark:hover:bg-postcard-red shadow-md"
                           title="Remove"
                         >
                           ✕
@@ -377,9 +377,9 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="w-full border-2 border-dashed border-gray-300 hover:border-black transition p-4 text-center"
+                      className="w-full border-2 border-dashed border-postcard-gray-300 dark:border-postcard-night-border hover:border-postcard-blue dark:hover:border-postcard-blue-bright transition p-4 text-center"
                     >
-                      <div className="font-mono text-xs uppercase tracking-wider text-gray-600">
+                      <div className="font-mono text-xs uppercase tracking-wider text-postcard-black-soft dark:text-postcard-night-muted">
                         + Add more images ({imagePreviews.length}/10)
                       </div>
                     </button>
@@ -389,10 +389,10 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-full border-2 border-dashed border-gray-300 hover:border-black transition p-6 sm:p-8 text-center"
+                  className="w-full border-2 border-dashed border-postcard-gray-300 dark:border-postcard-night-border hover:border-postcard-blue dark:hover:border-postcard-blue-bright transition p-6 sm:p-8 text-center"
                 >
                   <div className="text-2xl sm:text-3xl mb-1">📷</div>
-                  <div className="font-mono text-xs uppercase tracking-wider text-gray-600">
+                  <div className="font-mono text-xs uppercase tracking-wider text-postcard-black-soft dark:text-postcard-night-muted">
                     Add images (up to 10)
                   </div>
                 </button>
@@ -417,21 +417,21 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
               onChange={(e) => setCaption(e.target.value)}
               rows={postType === 'story' ? 8 : 4}
               maxLength={postType === 'story' ? maxCaptionLength : undefined}
-              className="w-full border-2 border-gray-300 focus:border-black outline-none p-2 sm:p-3 font-sans resize-none text-sm sm:text-base"
+              className="w-full border-2 border-postcard-gray-300 dark:border-postcard-night-border dark:bg-postcard-night-bg dark:text-white focus:border-postcard-blue dark:focus:border-postcard-blue-bright outline-none p-2 sm:p-3 font-sans resize-none text-sm sm:text-base"
               placeholder={postType === 'photo' ? 'Add a caption...' : 'Write your story here... Share your thoughts, experiences, or memories.'}
             />
           </div>
 
           {/* Tags */}
           <div className="mb-4 sm:mb-6">
-            <label className="block mb-2 font-mono text-xs uppercase tracking-wider">
+            <label className="block mb-2 font-mono text-xs uppercase tracking-wider dark:text-postcard-night-text">
               Tags (Optional)
             </label>
             <input
               type="text"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
-              className="w-full border-2 border-gray-300 focus:border-black outline-none p-2 sm:p-3 font-sans text-sm sm:text-base"
+              className="w-full border-2 border-postcard-gray-300 dark:border-postcard-night-border dark:bg-postcard-night-bg dark:text-white focus:border-postcard-blue dark:focus:border-postcard-blue-bright outline-none p-2 sm:p-3 font-sans text-sm sm:text-base"
               placeholder="travel, friends, adventure"
             />
           </div>
@@ -442,14 +442,14 @@ export default function AddPostForm({ userId, postType, onClose, onPostCreated }
               type="button"
               onClick={onClose}
               disabled={uploading}
-              className="px-6 py-3 border-2 border-black font-mono text-xs sm:text-sm uppercase tracking-wider hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed order-2 sm:order-1"
+              className="px-6 py-3 border-2 border-postcard-black-text dark:border-postcard-night-border dark:text-white font-mono text-xs sm:text-sm uppercase tracking-wider hover:bg-postcard-gray-50 dark:hover:bg-postcard-night-bg transition disabled:opacity-50 disabled:cursor-not-allowed order-2 sm:order-1"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={uploading}
-              className="px-6 py-3 bg-blue-600 text-white border-2 border-blue-800 font-mono text-xs sm:text-sm uppercase tracking-wider hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed order-1 sm:order-2"
+              className="px-8 py-3.5 bg-gradient-to-r from-postcard-red to-postcard-red-light dark:from-postcard-red-bright dark:to-postcard-red-lighter text-white font-mono text-xs sm:text-sm uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed order-1 sm:order-2 rounded-modern-lg shadow-md font-semibold"
             >
               {uploading ? 'Posting...' : 'Post'}
             </button>

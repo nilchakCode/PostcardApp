@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" fill="none">
+  <!-- Wavy cancellation lines on the left -->
+  <path d="M 0 100 Q 50 80, 100 100 T 200 100 T 300 100 T 350 100"
+        stroke="#888" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M 20 180 Q 70 160, 120 180 T 220 180 T 320 180 T 370 180"
+        stroke="#888" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M 0 260 Q 50 240, 100 260 T 200 260 T 300 260 T 350 260"
+        stroke="#888" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M 20 340 Q 70 320, 120 340 T 220 340 T 320 340 T 370 340"
+        stroke="#888" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M 0 420 Q 50 400, 100 420 T 200 420 T 300 420 T 350 420"
+        stroke="#888" stroke-width="12" stroke-linecap="round" fill="none"/>
+
+  <!-- Outer circle ring -->
+  <circle cx="650" cy="260" r="220" stroke="#999" stroke-width="8" fill="none"/>
+
+  <!-- Inner circle ring -->
+  <circle cx="650" cy="260" r="180" stroke="#aaa" stroke-width="6" fill="none"/>
+</svg>

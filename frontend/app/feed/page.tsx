@@ -336,7 +336,7 @@ export default function FeedPage() {
       {/* Hamburger Menu Button - Bottom Left */}
       <button
         onClick={() => setSideMenuOpen(!sideMenuOpen)}
-        className="hamburger-btn fixed bottom-6 left-6 z-50 bg-orange-500 hover:bg-orange-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110"
+        className="hamburger-btn fixed bottom-6 left-6 z-50 bg-postcard-red hover:bg-postcard-red-dark dark:bg-postcard-red-bright dark:hover:bg-postcard-red text-white w-16 h-16 rounded-full shadow-modern hover:shadow-modern-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
         aria-label="Menu"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@ export default function FeedPage() {
       </button>
 
       {/* Side Panel */}
-      <div className={`side-menu fixed top-0 left-0 h-full w-72 bg-white dark:bg-gray-800 border-r-2 border-black dark:border-gray-600 shadow-2xl z-40 transform transition-transform duration-300 ${
+      <div className={`side-menu fixed top-0 left-0 h-full w-80 bg-white/95 dark:bg-postcard-night-surface/95 backdrop-blur-xl shadow-modern-lg z-40 transform transition-all duration-500 ease-in-out ${
         sideMenuOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         <div className="p-6">
@@ -362,11 +362,11 @@ export default function FeedPage() {
           </div>
 
           {/* Feedback Section */}
-          <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-            <h3 className="text-sm font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-4">Help & Support</h3>
+          <div className="border-t border-postcard-gray-200 dark:border-postcard-night-border pt-6">
+            <h3 className="text-sm font-mono uppercase tracking-wider text-postcard-black-soft dark:text-postcard-night-muted mb-4">Help & Support</h3>
             <button
               onClick={() => router.push('/feedback')}
-              className="w-full flex items-center gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-700 border-2 border-transparent hover:border-orange-500 transition-all"
+              className="w-full flex items-center gap-3 p-3 rounded-lg bg-postcard-gray-50 dark:bg-postcard-night-bg border-2 border-transparent hover:border-postcard-red dark:hover:border-postcard-red-bright transition-all"
             >
               <span className="text-2xl">💬</span>
               <div className="text-left flex-1">
@@ -380,16 +380,16 @@ export default function FeedPage() {
           </div>
 
           {/* Theme Section */}
-          <div className="border-t border-gray-200 dark:border-gray-700 pt-6 mt-6">
-            <h3 className="text-sm font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-4">Theme</h3>
+          <div className="border-t border-postcard-gray-200 dark:border-postcard-night-border pt-6 mt-6">
+            <h3 className="text-sm font-mono uppercase tracking-wider text-postcard-black-soft dark:text-postcard-night-muted mb-4">Theme</h3>
             <div className="space-y-2">
               {/* Light Theme */}
               <button
                 onClick={() => setTheme('light')}
-                className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
+                className={`w-full flex items-center gap-3 p-4 rounded-modern-lg transition-all duration-300 ${
                   theme === 'light'
-                    ? 'bg-orange-100 dark:bg-orange-900 border-2 border-orange-500'
-                    : 'bg-gray-50 dark:bg-gray-700 border-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'bg-gradient-to-r from-red-50 to-pink-50 dark:from-postcard-red-dark dark:to-red-900 border-2 border-postcard-red dark:border-postcard-red-bright shadow-md'
+                    : 'bg-postcard-gray-50 dark:bg-postcard-night-bg border-2 border-transparent hover:border-postcard-gray-300 dark:hover:border-postcard-night-border hover:shadow-md hover:-translate-y-0.5'
                 }`}
               >
                 <span className="text-2xl">☀️</span>
@@ -398,7 +398,7 @@ export default function FeedPage() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">Bright and clear</div>
                 </div>
                 {theme === 'light' && (
-                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-postcard-red dark:text-postcard-red-bright" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 )}
@@ -407,10 +407,10 @@ export default function FeedPage() {
               {/* Dark Theme */}
               <button
                 onClick={() => setTheme('dark')}
-                className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
+                className={`w-full flex items-center gap-3 p-4 rounded-modern-lg transition-all duration-300 ${
                   theme === 'dark'
-                    ? 'bg-orange-100 dark:bg-orange-900 border-2 border-orange-500'
-                    : 'bg-gray-50 dark:bg-gray-700 border-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'bg-gradient-to-r from-red-50 to-pink-50 dark:from-postcard-red-dark dark:to-red-900 border-2 border-postcard-red dark:border-postcard-red-bright shadow-md'
+                    : 'bg-postcard-gray-50 dark:bg-postcard-night-bg border-2 border-transparent hover:border-postcard-gray-300 dark:hover:border-postcard-night-border hover:shadow-md hover:-translate-y-0.5'
                 }`}
               >
                 <span className="text-2xl">🌙</span>
@@ -419,7 +419,7 @@ export default function FeedPage() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">Easy on the eyes</div>
                 </div>
                 {theme === 'dark' && (
-                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-postcard-red dark:text-postcard-red-bright" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 )}
@@ -428,10 +428,10 @@ export default function FeedPage() {
               {/* Auto Theme */}
               <button
                 onClick={() => setTheme('auto')}
-                className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
+                className={`w-full flex items-center gap-3 p-4 rounded-modern-lg transition-all duration-300 ${
                   theme === 'auto'
-                    ? 'bg-orange-100 dark:bg-orange-900 border-2 border-orange-500'
-                    : 'bg-gray-50 dark:bg-gray-700 border-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600'
+                    ? 'bg-gradient-to-r from-red-50 to-pink-50 dark:from-postcard-red-dark dark:to-red-900 border-2 border-postcard-red dark:border-postcard-red-bright shadow-md'
+                    : 'bg-postcard-gray-50 dark:bg-postcard-night-bg border-2 border-transparent hover:border-postcard-gray-300 dark:hover:border-postcard-night-border hover:shadow-md hover:-translate-y-0.5'
                 }`}
               >
                 <span className="text-2xl">🔄</span>
@@ -440,7 +440,7 @@ export default function FeedPage() {
                   <div className="text-xs text-gray-500 dark:text-gray-400">Match system</div>
                 </div>
                 {theme === 'auto' && (
-                  <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-postcard-red dark:text-postcard-red-bright" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 )}
@@ -455,7 +455,7 @@ export default function FeedPage() {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-30" onClick={() => setSideMenuOpen(false)}></div>
       )}
 
-      <nav className="bg-white dark:bg-gray-800 border-b-2 border-black dark:border-gray-600 sticky top-0 z-10">
+      <nav className="bg-white/80 dark:bg-postcard-night-surface/80 backdrop-blur-xl border-b border-postcard-gray-200 dark:border-postcard-night-border sticky top-0 z-10 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 sm:py-4">
           {/* Mobile Layout - Stacked */}
           <div className="md:hidden">
@@ -480,8 +480,8 @@ export default function FeedPage() {
                 onClick={() => setActiveMenuItem('you')}
                 className={`font-mono text-xs transition-colors ${
                   activeMenuItem === 'you'
-                    ? 'text-amber-600 dark:text-amber-400 font-bold underline'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400'
+                    ? 'text-postcard-red dark:text-postcard-red-bright font-bold underline'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-postcard-red dark:hover:text-postcard-red-bright'
                 }`}
               >
                 You
@@ -489,7 +489,7 @@ export default function FeedPage() {
               <span className="text-gray-400 dark:text-gray-600">|</span>
               <button
                 onClick={() => router.push('/find-friends')}
-                className="font-mono text-xs text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                className="font-mono text-xs text-gray-600 dark:text-gray-400 hover:text-postcard-blue dark:hover:text-postcard-blue-bright transition-colors"
               >
                 Find Friends
               </button>
@@ -498,8 +498,8 @@ export default function FeedPage() {
                 onClick={() => setActiveMenuItem('postcard')}
                 className={`font-mono text-xs transition-colors ${
                   activeMenuItem === 'postcard'
-                    ? 'text-amber-600 dark:text-amber-400 font-bold underline'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400'
+                    ? 'text-postcard-blue dark:text-postcard-blue-bright font-bold underline'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-postcard-blue dark:hover:text-postcard-blue-bright'
                 }`}
               >
                 Postcard It
@@ -514,40 +514,50 @@ export default function FeedPage() {
                 onChange={handleFileChange}
                 className="hidden"
               />
-              <div
-                onClick={handlePhotoClick}
-                style={{ width: '60px', height: '60px' }}
-                className="border-2 border-black cursor-pointer relative group overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex-shrink-0"
-                title="Click to change photo"
-              >
-                {profile?.avatar_url ? (
-                  <Image
-                    src={profile.avatar_url}
-                    alt="Profile"
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-xl font-bold text-gray-400">
-                      {getInitials()}
-                    </span>
-                  </div>
-                )}
+              <div className="relative" style={{ width: '60px', height: '60px' }}>
+                <div
+                  onClick={handlePhotoClick}
+                  style={{ width: '60px', height: '60px' }}
+                  className="border-3 border-postcard-red dark:border-postcard-red-bright cursor-pointer relative group overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-postcard-night-surface dark:to-postcard-night-bg flex-shrink-0 shadow-modern hover:shadow-modern-lg rounded-modern transition-all duration-300 hover:-translate-y-1"
+                  title="Click to change photo"
+                >
+                  {profile?.avatar_url ? (
+                    <Image
+                      src={profile.avatar_url}
+                      alt="Profile"
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-xl font-bold text-gray-400">
+                        {getInitials()}
+                      </span>
+                    </div>
+                  )}
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all flex items-center justify-center">
-                  <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-center">
-                    <div className="text-sm">📷</div>
-                    <div className="text-[8px] font-mono uppercase tracking-wider">
-                      {uploading ? 'Upload...' : 'Change'}
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all flex items-center justify-center">
+                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                      <div className="text-sm">📷</div>
+                      <div className="text-[8px] font-mono uppercase tracking-wider">
+                        {uploading ? 'Upload...' : 'Change'}
+                      </div>
                     </div>
                   </div>
                 </div>
+                {/* Stamp overlay */}
+                <Image
+                  src="/stamp-overlay.svg"
+                  alt=""
+                  width={5760}
+                  height={5760}
+                  className="absolute top-1/2 left-1/2 -translate-x-[70%] -translate-y-1/2 pointer-events-none opacity-60 dark:opacity-50"
+                />
               </div>
 
               <div className="text-left min-w-0 flex-1">
-                <div className="font-bold tracking-tight text-amber-900 dark:text-amber-400 truncate text-xs">
+                <div className="font-bold tracking-tight text-postcard-red dark:text-postcard-red-bright truncate text-xs">
                   {getFullName().toUpperCase()}
                 </div>
               </div>
@@ -574,40 +584,50 @@ export default function FeedPage() {
                     onChange={handleFileChange}
                     className="hidden"
                   />
-                  <div
-                    onClick={handlePhotoClick}
-                    style={{ width: '78px', height: '78px' }}
-                    className="border-2 border-black cursor-pointer relative group overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200"
-                    title="Click to change photo"
-                  >
-                    {profile?.avatar_url ? (
-                      <Image
-                        src={profile.avatar_url}
-                        alt="Profile"
-                        fill
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-gray-400">
-                          {getInitials()}
-                        </span>
-                      </div>
-                    )}
+                  <div className="relative" style={{ width: '78px', height: '78px' }}>
+                    <div
+                      onClick={handlePhotoClick}
+                      style={{ width: '78px', height: '78px' }}
+                      className="border-3 border-postcard-red dark:border-postcard-red-bright cursor-pointer relative group overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-postcard-night-surface dark:to-postcard-night-bg shadow-modern hover:shadow-modern-lg rounded-modern transition-all duration-300 hover:-translate-y-1"
+                      title="Click to change photo"
+                    >
+                      {profile?.avatar_url ? (
+                        <Image
+                          src={profile.avatar_url}
+                          alt="Profile"
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="text-2xl font-bold text-gray-400">
+                            {getInitials()}
+                          </span>
+                        </div>
+                      )}
 
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all flex items-center justify-center">
-                      <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-center">
-                        <div className="text-lg">📷</div>
-                        <div className="text-[8px] font-mono uppercase tracking-wider">
-                          {uploading ? 'Upload...' : 'Change'}
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all flex items-center justify-center">
+                        <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                          <div className="text-lg">📷</div>
+                          <div className="text-[8px] font-mono uppercase tracking-wider">
+                            {uploading ? 'Upload...' : 'Change'}
+                          </div>
                         </div>
                       </div>
                     </div>
+                    {/* Stamp overlay */}
+                    <Image
+                      src="/stamp-overlay.svg"
+                      alt=""
+                      width={9488}
+                      height={9488}
+                      className="absolute top-1/2 left-1/2 -translate-x-[90%] -translate-y-1/2 pointer-events-none opacity-100 dark:opacity-100"
+                    />
                   </div>
 
                   <div className="text-left">
-                    <div className="font-bold tracking-tight text-amber-900 dark:text-amber-400" style={{ fontSize: '7pt' }}>
+                    <div className="font-bold tracking-tight text-postcard-red dark:text-postcard-red-bright" style={{ fontSize: '7pt' }}>
                       {getFullName().toUpperCase()}
                     </div>
                   </div>
@@ -628,8 +648,8 @@ export default function FeedPage() {
                 onClick={() => setActiveMenuItem('you')}
                 className={`font-mono text-sm transition-colors ${
                   activeMenuItem === 'you'
-                    ? 'text-amber-600 dark:text-amber-400 font-bold underline'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400'
+                    ? 'text-postcard-red dark:text-postcard-red-bright font-bold underline'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-postcard-red dark:hover:text-postcard-red-bright'
                 }`}
               >
                 You
@@ -637,7 +657,7 @@ export default function FeedPage() {
               <span className="text-gray-400 dark:text-gray-600">|</span>
               <button
                 onClick={() => router.push('/find-friends')}
-                className="font-mono text-sm text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                className="font-mono text-sm text-gray-600 dark:text-gray-400 hover:text-postcard-blue dark:hover:text-postcard-blue-bright transition-colors"
               >
                 Find Friends
               </button>
@@ -646,8 +666,8 @@ export default function FeedPage() {
                 onClick={() => setActiveMenuItem('postcard')}
                 className={`font-mono text-sm transition-colors ${
                   activeMenuItem === 'postcard'
-                    ? 'text-amber-600 dark:text-amber-400 font-bold underline'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400'
+                    ? 'text-postcard-blue dark:text-postcard-blue-bright font-bold underline'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-postcard-blue dark:hover:text-postcard-blue-bright'
                 }`}
               >
                 Postcard It
@@ -657,11 +677,11 @@ export default function FeedPage() {
         </div>
       </nav>
 
-      <main className="max-w-6xl mx-auto px-4 py-4 sm:py-8">
+      <main className="max-w-6xl mx-auto px-4 py-6 sm:py-10">
         {/* Feed Section */}
-        <div className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 p-4 sm:p-6 md:p-8">
-          <div className="border-b-2 border-black dark:border-gray-600 pb-3 sm:pb-4 mb-4 sm:mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-amber-600 dark:text-amber-400">YOUR FEED</h2>
+        <div className="bg-white dark:bg-postcard-night-surface rounded-modern-xl p-6 sm:p-8 md:p-10 shadow-modern hover:shadow-modern-lg transition-shadow duration-300">
+          <div className="border-b border-postcard-gray-200 dark:border-postcard-night-border pb-4 sm:pb-6 mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-3 text-postcard-red dark:text-postcard-red-bright lowercase">your feed</h2>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
               {/* Left side - Search */}
               <div className="flex-1">
@@ -671,9 +691,9 @@ export default function FeedPage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by tags (e.g., travel, friends)"
-                    className="w-full border-0 bg-white dark:bg-gray-700 dark:text-white outline-none px-5 py-3 pr-14 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-400 placeholder:font-normal rounded-full shadow-lg hover:shadow-xl transition-shadow"
+                    className="w-full border-2 border-postcard-gray-200 dark:border-postcard-night-border bg-white dark:bg-postcard-night-bg dark:text-white outline-none px-5 py-3.5 pr-14 text-sm placeholder:text-gray-500 dark:placeholder:text-gray-400 placeholder:font-normal rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:border-postcard-blue dark:focus:border-postcard-blue-bright focus:ring-4 focus:ring-postcard-blue/10 dark:focus:ring-postcard-blue-bright/10 transition-all duration-300"
                   />
-                  <button className="absolute right-1 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-md">
+                  <button className="absolute right-1 top-1/2 -translate-y-1/2 bg-gradient-to-r from-postcard-red to-postcard-red-light dark:from-postcard-red-bright dark:to-postcard-red-lighter hover:scale-110 text-white w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
@@ -682,21 +702,21 @@ export default function FeedPage() {
               </div>
 
               {/* Right side - Action buttons */}
-              <div className="flex flex-wrap items-center gap-4 md:gap-6 md:justify-end">
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 md:justify-end">
                 <button
                   onClick={() => setShowAddPost('photo')}
-                  className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all hover:scale-110 group"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-modern-lg bg-gradient-to-r from-postcard-blue to-postcard-blue-light dark:from-postcard-blue-bright dark:to-postcard-blue-lighter text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
                 >
-                  <span className="text-xl group-hover:animate-pulse">📸</span>
-                  <span className="font-mono text-sm uppercase tracking-wider group-hover:animate-pulse">Upload a Photo</span>
+                  <span className="text-xl">📸</span>
+                  <span className="font-mono text-xs uppercase tracking-wider font-semibold">Upload a Photo</span>
                 </button>
 
                 <button
                   onClick={() => setShowAddPost('story')}
-                  className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-all hover:scale-110 group"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-modern-lg bg-gradient-to-r from-postcard-red to-postcard-red-light dark:from-postcard-red-bright dark:to-postcard-red-lighter text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
                 >
-                  <span className="text-xl group-hover:animate-pulse">📖</span>
-                  <span className="font-mono text-sm uppercase tracking-wider group-hover:animate-pulse">Share Your Story</span>
+                  <span className="text-xl">📖</span>
+                  <span className="font-mono text-xs uppercase tracking-wider font-semibold">Share Your Story</span>
                 </button>
               </div>
             </div>
@@ -755,11 +775,11 @@ export default function FeedPage() {
                 </button>
               </div>
             ) : (
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-6 sm:space-y-8">
                 {filteredPosts.map((post) => (
-                <div key={post.id} className="border-2 border-amber-600 dark:border-amber-700 bg-white dark:bg-gray-700 overflow-hidden">
+                <div key={post.id} className="rounded-modern-xl bg-white dark:bg-postcard-night-surface overflow-hidden shadow-modern hover:shadow-modern-lg hover:-translate-y-1 transition-all duration-300">
                   {/* Post Header */}
-                  <div className="border-b-2 border-amber-600 dark:border-amber-700 p-3 sm:p-4 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+                  <div className="border-b border-postcard-gray-200 dark:border-postcard-night-border p-4 sm:p-5 bg-gradient-to-r from-postcard-red/5 to-postcard-red/10 dark:from-postcard-red-bright/10 dark:to-postcard-red-bright/5">
                     <div className="flex items-center justify-between">
                       <div className="font-mono text-xs uppercase tracking-wider text-black dark:text-white">
                         {post.post_type === 'photo' ? '📸 Photo' : '📖 Story'}
@@ -825,11 +845,11 @@ export default function FeedPage() {
                         // Multiple images for stories
                         <div>
                           {/* View Mode Toggle */}
-                          <div className="border-b-2 border-amber-600 dark:border-amber-700 bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900 dark:to-yellow-900 px-3 py-2 flex items-center justify-between">
-                            <span className="font-mono text-xs text-gray-600 dark:text-gray-300">
+                          <div className="border-b-2 border-postcard-blue dark:border-postcard-blue-bright bg-blue-gradient dark:bg-blue-gradient-dark px-3 py-2 flex items-center justify-between">
+                            <span className="font-mono text-xs text-white font-semibold">
                               {post.image_url.split(',').length} Images
                             </span>
-                            <div className="flex gap-1 border-2 border-black dark:border-gray-400">
+                            <div className="flex gap-1 border-2 border-white dark:border-postcard-night-border">
                               <button
                                 onClick={() => setPostViewMode(prev => ({ ...prev, [post.id]: 'grid' }))}
                                 className={`px-3 py-1 text-xs font-mono uppercase transition ${
@@ -1024,7 +1044,7 @@ export default function FeedPage() {
                           <button
                             onClick={handleSaveEdit}
                             disabled={updating}
-                            className="px-4 py-2 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider hover:bg-orange-600 transition disabled:opacity-50"
+                            className="px-4 py-2 bg-postcard-red dark:bg-postcard-red-bright text-white font-mono text-sm uppercase tracking-wider hover:bg-postcard-red-dark dark:hover:bg-postcard-red transition disabled:opacity-50 shadow-postcard dark:shadow-postcard-dark"
                           >
                             {updating ? 'Saving...' : 'Save Changes'}
                           </button>
@@ -1038,11 +1058,11 @@ export default function FeedPage() {
                         )}
 
                         {post.tags && post.tags.length > 0 && (
-                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3">
+                          <div className="flex flex-wrap gap-2 mb-3">
                             {post.tags.map((tag: string, idx: number) => (
                               <span
                                 key={idx}
-                                className="bg-blue-100 dark:bg-blue-900 border border-blue-300 dark:border-blue-700 px-2 py-1 text-xs font-mono dark:text-white"
+                                className="bg-gradient-to-r from-postcard-blue/10 to-postcard-blue/5 dark:from-postcard-blue-bright/20 dark:to-postcard-blue-bright/10 border border-postcard-blue/30 dark:border-postcard-blue-bright/30 px-3 py-1.5 rounded-full text-xs font-mono text-postcard-blue dark:text-postcard-blue-lighter font-semibold hover:scale-105 transition-transform duration-200 cursor-default"
                               >
                                 #{tag}
                               </span>

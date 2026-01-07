@@ -123,8 +123,8 @@ export default function FeedbackPage() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors">
       {/* Navigation */}
-      <nav className="bg-white dark:bg-gray-800 border-b-2 border-black dark:border-gray-600 sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4 py-3 sm:py-4">
+      <nav className="bg-white/80 dark:bg-postcard-night-surface/80 backdrop-blur-xl border-b border-postcard-gray-200 dark:border-postcard-night-border sticky top-0 z-10 shadow-md">
+        <div className="max-w-6xl mx-auto px-4 py-4 sm:py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Image src="/logo.svg" alt="PostcardsTo Logo" width={40} height={40} />
@@ -134,7 +134,7 @@ export default function FeedbackPage() {
             </div>
             <button
               onClick={() => router.push('/feed')}
-              className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-4 sm:px-6 py-2 font-mono text-xs uppercase tracking-wider hover:bg-gray-800 dark:hover:bg-gray-200 transition"
+              className="flex items-center gap-2 bg-postcard-black dark:bg-white text-white dark:text-black px-5 sm:px-7 py-2.5 sm:py-3 font-mono text-xs uppercase tracking-wider hover:bg-postcard-black-soft dark:hover:bg-postcard-gray-200 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 shadow-md rounded-modern-lg"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -166,9 +166,9 @@ export default function FeedbackPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for help topics, questions, or keywords..."
-              className="w-full border-0 bg-white dark:bg-gray-700 dark:text-white outline-none px-6 sm:px-8 py-5 sm:py-6 pr-16 sm:pr-20 text-base sm:text-lg placeholder:text-gray-500 dark:placeholder:text-gray-400 placeholder:font-normal rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow"
+              className="w-full border-2 border-postcard-gray-200 dark:border-postcard-night-border bg-white dark:bg-postcard-night-bg dark:text-white outline-none px-6 sm:px-8 py-5 sm:py-6 pr-16 sm:pr-20 text-base sm:text-lg placeholder:text-gray-500 dark:placeholder:text-gray-400 placeholder:font-normal rounded-modern-2xl shadow-md hover:shadow-lg focus:shadow-lg focus:border-postcard-blue dark:focus:border-postcard-blue-bright focus:ring-4 focus:ring-postcard-blue/10 dark:focus:ring-postcard-blue-bright/10 transition-all duration-300"
             />
-            <button className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center transition-colors shadow-lg">
+            <button className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-gradient-to-r from-postcard-red to-postcard-red-light dark:from-postcard-red-bright dark:to-postcard-red-lighter hover:scale-110 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-modern-xl flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg">
               <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -185,14 +185,14 @@ export default function FeedbackPage() {
         <div className="space-y-8">
           {/* Creators Section */}
           {filteredCreatorFAQs.length > 0 && (
-            <div className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 p-6 sm:p-8">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-postcard-night-surface rounded-modern-xl p-6 sm:p-8 shadow-modern hover:shadow-modern-lg transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-postcard-gray-200 dark:border-postcard-night-border">
                 <span className="text-3xl">🎨</span>
-                <h3 className="text-2xl font-bold text-amber-600 dark:text-amber-400">For Creators</h3>
+                <h3 className="text-2xl font-bold text-postcard-red dark:text-postcard-red-bright">For Creators</h3>
               </div>
               <div className="space-y-3">
                 {filteredCreatorFAQs.map((faq, idx) => (
-                  <div key={idx} className="border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <div key={idx} className="border border-postcard-gray-200 dark:border-postcard-night-border rounded-modern-lg overflow-hidden hover:shadow-md transition-all duration-300">
                     <button
                       onClick={() => setExpandedCreator(expandedCreator === idx ? null : idx)}
                       className="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-left"
@@ -222,14 +222,14 @@ export default function FeedbackPage() {
 
           {/* Readers Section */}
           {filteredReaderFAQs.length > 0 && (
-            <div className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 p-6 sm:p-8">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-postcard-night-surface rounded-modern-xl p-6 sm:p-8 shadow-modern hover:shadow-modern-lg transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-postcard-gray-200 dark:border-postcard-night-border">
                 <span className="text-3xl">📖</span>
-                <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400">For Readers</h3>
+                <h3 className="text-2xl font-bold text-postcard-blue dark:text-postcard-blue-bright">For Readers</h3>
               </div>
               <div className="space-y-3">
                 {filteredReaderFAQs.map((faq, idx) => (
-                  <div key={idx} className="border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <div key={idx} className="border border-postcard-gray-200 dark:border-postcard-night-border rounded-modern-lg overflow-hidden hover:shadow-md transition-all duration-300">
                     <button
                       onClick={() => setExpandedReader(expandedReader === idx ? null : idx)}
                       className="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-left"
@@ -259,14 +259,14 @@ export default function FeedbackPage() {
 
           {/* General FAQ Section */}
           {filteredGeneralFAQs.length > 0 && (
-            <div className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 p-6 sm:p-8">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-gray-200 dark:border-gray-700">
+            <div className="bg-white dark:bg-postcard-night-surface rounded-modern-xl p-6 sm:p-8 shadow-modern hover:shadow-modern-lg transition-shadow duration-300">
+              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-postcard-gray-200 dark:border-postcard-night-border">
                 <span className="text-3xl">❓</span>
-                <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">General FAQ</h3>
+                <h3 className="text-2xl font-bold text-postcard-blue-light dark:text-postcard-blue-lighter">General FAQ</h3>
               </div>
               <div className="space-y-3">
                 {filteredGeneralFAQs.map((faq, idx) => (
-                  <div key={idx} className="border-2 border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <div key={idx} className="border border-postcard-gray-200 dark:border-postcard-night-border rounded-modern-lg overflow-hidden hover:shadow-md transition-all duration-300">
                     <button
                       onClick={() => setExpandedGeneral(expandedGeneral === idx ? null : idx)}
                       className="w-full flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-left"
@@ -296,14 +296,14 @@ export default function FeedbackPage() {
 
           {/* No Results */}
           {searchQuery.trim() && totalResults === 0 && (
-            <div className="text-center py-12 bg-white dark:bg-gray-800 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
+            <div className="text-center py-12 bg-white dark:bg-postcard-night-surface border-2 border-dashed border-postcard-gray-300 dark:border-postcard-night-border rounded-modern-xl shadow-modern">
               <div className="text-5xl mb-4">🔍</div>
               <p className="text-gray-500 dark:text-gray-400 font-mono">
                 No results found for &quot;{searchQuery}&quot;
               </p>
               <button
                 onClick={() => setSearchQuery('')}
-                className="mt-4 text-orange-500 hover:text-orange-600 font-mono text-sm underline"
+                className="mt-4 text-postcard-red dark:text-postcard-red-bright hover:text-postcard-red-dark dark:hover:text-postcard-red font-mono text-sm underline hover:scale-105 transition-transform duration-200"
               >
                 Clear search
               </button>
@@ -312,16 +312,16 @@ export default function FeedbackPage() {
         </div>
 
         {/* Contact Section */}
-        <div className="mt-12 text-center p-8 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900 dark:to-amber-900 border-2 border-orange-300 dark:border-orange-700 rounded-lg">
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
+        <div className="mt-12 text-center p-10 bg-gradient-to-r from-postcard-red to-postcard-red-light dark:from-postcard-red-bright dark:to-postcard-red-lighter rounded-modern-2xl shadow-modern-lg hover:shadow-modern transition-shadow duration-300">
+          <h3 className="text-2xl font-bold text-white mb-3">
             Still have questions?
           </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
+          <p className="text-white/90 mb-6 text-lg">
             We're here to help! Reach out to our support team.
           </p>
           <a
             href="mailto:support@postcardapp.com"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-wider transition-colors"
+            className="inline-block bg-white text-postcard-red hover:bg-postcard-cream dark:bg-postcard-night-bg dark:text-postcard-red-bright px-8 py-3.5 rounded-modern-lg font-mono text-sm uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 shadow-md font-semibold"
           >
             Contact Support
           </a>
