@@ -17,6 +17,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy only requirements first for caching
 COPY requirements.txt .
 
+# Debug: list files before pip install
+RUN ls -la
+RUN cat requirements.txt
+
 # Install Python dependencies
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
