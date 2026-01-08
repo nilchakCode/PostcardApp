@@ -16,16 +16,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements file
-# COPY requirements.txt .
+# Copy requirements file from backend directory
+COPY backend/requirements.txt .
 
 # Upgrade pip and install Python dependencies
-# Try to use pre-built wheels when available
 RUN pip install --upgrade pip setuptools wheel && \
     pip install -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copy backend application code
+COPY backend/ .
 
 # Expose port (Railway will assign its own PORT)
 EXPOSE 8000
